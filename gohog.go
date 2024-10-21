@@ -161,6 +161,7 @@ func (h *GoHog) Delete(id string) error {
 	return nil
 }
 
+// DeleteAll deletes all email messages on the server
 func (h *GoHog) DeleteAll() error {
 	mailHogUrl := fmt.Sprintf("%s%s", h.url, deleteUrl)
 	req, err := http.NewRequest(http.MethodDelete, mailHogUrl, nil)
