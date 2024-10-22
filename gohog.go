@@ -67,6 +67,25 @@ type Message struct {
 	Raw     Raw       `json:"raw"`
 }
 
+// ToAddresses convenience method to get the to email addresses
+func (m *Message) ToAddresses() []string {
+	var tos []string
+	for _, to := range m.To {
+		tos = append(tos, fmt.Sprintf("%s@%s", to.Mailbox, to.Domain))
+	}
+	return tos
+}
+
+// FromAddress convenience method to get the from email address
+func (m *Message) FromAddress() string {
+	return fmt.Sprintf("%s@%s", m.From.Mailbox, m.From.Domain)
+}
+
+// Subject convenience method to get the email subject
+func (m *Message) Subject() string {
+	return m.Content.Headers.Subject[0]
+}
+
 // Messages a struct the will contain a list of messages used for search and messages endpoint
 type Messages struct {
 	Total int       `json:"total"`

@@ -96,3 +96,28 @@ func TestDeleteMessages(t *testing.T) {
 		t.Error(err)
 	}
 }
+
+func TestConvenienceMethods(t *testing.T) {
+	sendMail()
+	client := http.Client{}
+	gohog := NewGoHogClient(mailHogUrl, &client)
+	messages, err := gohog.Search(searchContains, "Hello", 1, 20)
+	if err != nil {
+		t.Error(err)
+	}
+	message, err := gohog.Message(messages.Items[0].Id)
+	if err != nil {
+		t.Error(err)
+	}
+	if message.FromAddress() != "gohog@mailhog.com" {
+		t.Error("From function does not match")
+	}
+
+	if message.ToAddresses()[0] != "piggy@mailhog.com" {
+		t.Error("To function does not match")
+	}
+
+	if message.Subject() != "Hello from the MailHog!" {
+		t.Error("Subject function does not match")
+	}
+}
