@@ -1,4 +1,7 @@
-# go-hog
+# go-hog 
+
+[![Go Reference](https://pkg.go.dev/badge/github.com/latebitflip-io/go-hog.svg)](https://pkg.go.dev/github.com/latebitflip-io/go-hog)
+
 Go Client for mailhog:
 https://github.com/mailhog/MailHog
 
