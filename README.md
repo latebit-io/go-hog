@@ -1,4 +1,4 @@
-# go-hog 
+# go-hog a MailHog client
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/latebitflip-io/go-hog.svg)](https://pkg.go.dev/github.com/latebitflip-io/go-hog)
 
