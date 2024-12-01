@@ -1,6 +1,6 @@
 # go-hog a MailHog client
 
-[![Go Reference](https://pkg.go.dev/badge/github.com/latebitflip-io/go-hog.svg)](https://pkg.go.dev/github.com/latebitflip-io/go-hog)
+[![Go Reference](https://pkg.go.dev/badge/github.com/latebit-io/go-hog.svg)](https://pkg.go.dev/github.com/latebit-io/go-hog)
 
 Go Client for mailhog:
 https://github.com/mailhog/MailHog
@@ -18,4 +18,4 @@ Then test it is working by running;
 
 Go install: 
 
-`go get github.com/latebitflip-io/go-hog`
+`go get github.com/latebit-io/go-hog`
